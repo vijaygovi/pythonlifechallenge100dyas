@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f0f4f8;
+    color: #1f2937;
+}
+
+/* --- Login Page (AI Background) --- */
+.login-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.login-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://img.freepik.com/premium-photo/smart-farming-concept-farmer-with-technology-digital-tablet-background-wheat-field-professional-farmers-use-internet-things-iot-computers-system-manage-farms-agriculture-modern-idea_2379-2858.jpg') no-repeat center/cover;
+    filter: brightness(0.6);
+    z-index: 0;
+}
+
+.login-box {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    width: 350px;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #2563eb;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #d5dbd1;
+    border-radius: 8px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background: #1e40af;
+}
+
+/* --- Dashboard Layout --- */
+.dashboard {
+    display: none;
+    /* hidden at first */
+    height: 100vh;
+    flex: 1;
+}
+
+.sidebar {
+    width: 220px;
+    background: #1f2937;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+    color: #16a34a;
+}
+
+.sidebar a {
+    color: #d1d5db;
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 6px;
+    display: block;
+}
+
+.sidebar a:hover {
+    background: #374151;
+}
+
+.main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Chat */
+.chat-box {
+    height: 200px;
+    overflow-y: auto;
+    background: #f9fafb;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.chat-box div {
+    margin: 5px 0;
+}
+
+.chat-input {
+    display: flex;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+.chat-input button {
+    margin-left: 8px;
+    padding: 10px 16px;
+    background: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background: #15803d;
+}
+
+/* Camera */
+video,
+canvas {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+/* Activities */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+li button {
+    background: #e5e7eb;
+    border: none;
+    padding: 4px 8px;
+    margin-left: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+li button:hover {
+    background: #d1d5db;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Farming Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- LOGIN PAGE -->
+    <div id="loginPage" class="login-page">
+        <div class="login-bg"></div>
+        <div class="login-box">
+            <h2>🤖 AI Farming Login</h2>
+            <input type="text" id="username" placeholder="Username"/>
+            <input type="password" id="password" placeholder="Password":navii1432 />
+            <button onclick="login()">Login</button> 
+                
+                        
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+
+    <div class="dashboard" id="dashboard">
+        <aside class="sidebar">
+                <div class="sidebar">
+                    <h2>AI-Farming 🌱</h2>
+                    <ul>
+                        <li onclick="toggleMenu('crop')">🌾 Your Crop</li>
+                        <ul id="crop" class="dropdown">
+                            <!-- <li>Crop Details</li>
+                            <li>Add New Crop</li> -->
+                        </ul>
+                
+                        <li onclick="toggleMenu('community')">👥 Community</li>
+                        <ul id="community" class="dropdown">
+                            <!-- <li>Discussion Farmers</li>
+                            <li>Farmer Groups</li> -->
+                        </ul>
+                
+                        <li onclick="toggleMenu('market')">🛒 Market</li>
+                        <ul id="market" class="dropdown">
+                            <!-- <li>Buy Seeds</li>
+                            <li>Sell Crops</li> -->
+                        </ul>
+                
+                        <li onclick="toggleMenu('land')">🌍 Land Details</li>
+                        <ul id="land" class="dropdown">
+                            <!-- <li>My Land</li>
+                            <li>Soil Reports</li> -->
+                        </ul>
+                
+                        <li onclick="toggleMenu('fertilizer')">🧪 Fertilizer Shop</li>
+                        <ul id="fertilizer" class="dropdown">
+                            <!-- <li>Order Fertilizer</li>
+                            <li>Check Stock</li> -->
+                        </ul>
+                
+                        <li onclick="toggleMenu('govt')">🏛 Government Schemes</li>
+                        <ul id="govt" class="dropdown">
+                            <!-- <li>Subsidy Info</li>
+                            <li>Apply Online</li> -->
+                        </ul>
+                
+                        <li onclick="toggleMenu('orders')">📦 Orders</li>
+                        <ul id="orders" class="dropdown">
+                            <!-- <li>My Orders</li>
+                            <li>Track Order</li> -->
+                        </ul>
+                
+                        <li onclick="toggleMenu('settings')">⚙️ Settings</li>
+                        <ul id="settings" class="dropdown">
+                            <!-- <li>Profile</li> -->
+                            <!-- <li>Logout</li> -->
+                            <li onclick="toggleMenu('Logout')">Logout</li>
+                            <ul id="Logout" class="dropdown">
+                        </ul>
+                    </ul>
+                </div>
+
+
+        </aside>
+
+        <main class="main">
+            <header>
+                <h2>Welcome, Farmer 👨‍🌾</h2>
+            </header>
+
+            <!-- Info Cards -->
+            <div class="grid">
+                <div class="card">
+                    <h4>🌡 Weather</h4>
+                    <p id="weatherText">Today: 30°C | 65% Humidity | 12mm Rain</p>
+                </div>
+                <div class="card">
+                    <h4>🌱 Growth</h4>
+                    <p>Stage: Vegetative</p>
+                </div>
+                <div class="card">
+                    <h4>💧 Soil</h4>
+                    <p>Moisture: 42%</p>
+                </div>
+                <div class="card">
+                    <h4>📊 AI Status</h4>
+                    <p id="aiStatus">Analyzing weather impact...</p>
+                </div>
+            </div>
+
+            <!-- Graph -->
+            <div class="card">
+                <h4>🌦 Weather vs Crop Yield</h4>
+                <canvas id="weatherCropChart"></canvas>
+            </div>
+
+            <!-- AI Assistant + Camera + Activities -->
+            <div class="grid">
+                <div class="card">
+                    <h4>🤖 AI Assistant</h4>
+                    <div class="chat-box" id="chatBox"></div>
+                    <div class="chat-input">
+                        <input type="text" id="aiInput" placeholder="Ask AI..."
+                            onkeypress="if(event.key==='Enter') sendAIMessage()" />
+                        <button onclick="sendAIMessage()">Send</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>📷 Crop Camera</h4>
+                    <video id="video" autoplay></video>
+                    <canvas id="canvas" style="display:none;"></canvas>
+                    <button onclick="capturePhoto()">Capture & Analyze</button>
+                </div>
+
+                <div class="card">
+                    <h4>📌 Activities</h4>
+                    <ul id="activities"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
